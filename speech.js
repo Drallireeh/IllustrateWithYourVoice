@@ -16,8 +16,8 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
 }
 
 recognition.onstart = function () {
-    $("#button-start").css("background-color", "green");
-    $("#button-start").text("Stopper l'enregistrement");
+    $("#button-start").addClass("active");
+    $("#button-start").html('<i class="fas fa-book-reader"></i>' + "Mettre fin à l'histoire");
     recognizing = true;
 };
 
@@ -28,8 +28,8 @@ recognition.onspeechend = function() {
 }
 
 recognition.onend = function () {
-    $("#button-start").css("background-color", "red");
-    $("#button-start").text("Commencer l'enregistrement");
+    $("#button-start").removeClass("active");
+    $("#button-start").html('<i class="fas fa-book-reader"></i>' + "Commencer l'histoire");
     recognizing = false;
 };
 
@@ -55,10 +55,11 @@ recognition.onresult = function (event) {
               }, (error) => {
                 console.log(error);
               });
-
+            string = "";
             $(".temp").html(final + " ").removeClass("temp");
         } else {
             interim += event.results[i][0].transcript;
+            console.log(interim)
             string = interim;
             $("#textarea .temp").html(interim);
             clearTimeout(timeoutVar);
