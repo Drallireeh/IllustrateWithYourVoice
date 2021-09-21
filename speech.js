@@ -46,16 +46,20 @@ recognition.onresult = function (event) {
         if (event.results[i].isFinal) {
             final = event.results[i][0].transcript;
             console.log(filterPhrase(string));
+            qresult = filterPhrase(string);
+
+
+            axios.get('http://127.0.0.1:8000/api/test?q=' + qresult.join(' '))
+              .then((response) => {
+                console.log(response);
+              }, (error) => {
+                console.log(error);
+              });
+
             $(".temp").html(final + " ").removeClass("temp");
         } else {
             interim += event.results[i][0].transcript;
             string = interim;
-            // if (interim.toLowerCase().indexOf("à la ligne") !== -1) interim += "<br/>";
-            // if (interim.toLowerCase().indexOf(".") !== -1) {
-            //     $(".temp").html(interim + " ").removeClass("temp");
-            //     interim = "";
-            //     $("#textarea").append(`<p class="temp">${interim}</p>`);
-            // }
             $("#textarea .temp").html(interim);
             clearTimeout(timeoutVar);
             phraseEndDetection();
