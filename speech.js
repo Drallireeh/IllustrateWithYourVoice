@@ -43,10 +43,9 @@ recognition.onresult = function (event) {
     }
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
-        console.log("event : ", event.results[i][0])
-        console.log("event : ", event.results[i][0].length)
         if (event.results[i].isFinal) {
             final = event.results[i][0].transcript;
+            console.log(filterPhrase(string));
             $(".temp").html(final + " ").removeClass("temp");
         } else {
             interim += event.results[i][0].transcript;
