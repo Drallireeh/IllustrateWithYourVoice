@@ -1,0 +1,25 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body * {
+    outline: none;
+}
+
+#textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+button {
+    color: white;
+    background-color: orangered;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+span.temp {
+    background-color: lightgrey;
+}
