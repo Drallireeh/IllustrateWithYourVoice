@@ -8,19 +8,37 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/index.css">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="libs/bundle.js" type="module"></script>
     <script defer src="speech.js"></script>
 </head>
 
 <body>
-    <div>
-        <button id="button-start" onclick="toggleStartStop()">Début de l'enregistrement</button>
+    <main>
+        <header>
+            <h1>Illustrate With Your Voice</h1>
+            <button><i class="fas fa-plus"></i> Raconter une autre histoire</button>
+        </header>
 
-        <div contenteditable="true" name="textarea" id="textarea"></div>
-    </div>
+        <section class="start">
+            <button id="button-start" onclick="toggleStartStop()"><i class="fas fa-book-reader"></i> Commencer
+                l'histoire</button>
+        </section>
+
+        <section>
+            <div contenteditable="true" name="textarea" id="textarea"></div>
+        </section>
+    </main>
 </body>
 
 </html>

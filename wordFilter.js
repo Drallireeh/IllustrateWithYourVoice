@@ -10,7 +10,6 @@ window.filterPhrase = function(sentence) {
             return_changed_case: true,
             return_chained_words: true,
             remove_duplicates: false
-
         });
 
     return extraction_result
