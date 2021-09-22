@@ -47,10 +47,10 @@ recognition.onresult = function (event) {
             final = event.results[i][0].transcript;
             qresult = filterPhrase(string);
 
-            // for (let i = 0; i < qresult.length; i++) {
-            //     console.log(qresult[i]);
-            //     findImage(qresult[i]);
-            // }
+            
+            for (let i = 0; i < qresult.length; i++) {
+                searchGoogle(qresult[i]);
+            }
 
             string = "";
             $(".temp").html(final + " ").removeClass("temp");
