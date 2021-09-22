@@ -45,8 +45,12 @@ recognition.onresult = function (event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final = event.results[i][0].transcript;
-            console.log(filterPhrase(string));
             qresult = filterPhrase(string);
+
+            // for (let i = 0; i < qresult.length; i++) {
+            //     console.log(qresult[i]);
+            //     findImage(qresult[i]);
+            // }
 
             string = "";
             $(".temp").html(final + " ").removeClass("temp");

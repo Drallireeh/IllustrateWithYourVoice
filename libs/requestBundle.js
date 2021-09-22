@@ -8891,6 +8891,7 @@ const params = {
   location: "France",
   hl: "fr",
   gl: "fr",
+  tbm: "isch",
   google_domain: "google.fr"
 };
 

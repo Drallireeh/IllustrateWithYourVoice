@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Drallireeh/IllustrateWithYourVoice#readme",
   "dependencies": {
+    "firebase-admin": "^9.11.1",
     "google-search-results-nodejs": "^2.0.1",
     "keyword-extractor": "0.0.20"
   },
