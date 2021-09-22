@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background: #C3CCCC;
 }
 
 body * {
@@ -16,10 +17,11 @@ header {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Parisienne', cursive;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
+    color: #0D1616;
 }
 
 main button > i.fas {
