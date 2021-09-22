@@ -15,6 +15,8 @@
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,33 +24,50 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="libs/bundle.js" type="module"></script>
     <script defer src="speech.js"></script>
+    <script src="main.js"></script>
 
-
-
-    <!--font test-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <main>
         <header>
             <h1>Illustrate With Your Voice</h1>
-            <button><i class="fas fa-plus"></i> Raconter une autre histoire</button>
+            <button><i class="fas fa-undo"></i> <span class="reset-text"> Raconter une autre histoire</span></button>
         </header>
+        <section id="settings">
+            <ul>
+                <li>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="option1" name="">
+                        <label for="scales">Option 1</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="option2" name="">
+                        <label for="scales">Option 2</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="option3" name="">
+                        <label for="scales">Option 3</label>
+                    </div>
+                </li>
+            </ul>
+            <i class="settings-icon fas fa-cog"></i>
+        </section>
 
         <section class="start">
             <button id="button-start" onclick="toggleStartStop()"><i class="fas fa-book-reader"></i> Commencer
-                l'histoire</button>
+                l'histoire</span></button>
         </section>
 
         <section>
             <div contenteditable="true" name="textarea" id="textarea"></div>
+        </section>
+        
+        <section>
         </section>
     </main>
 </body>

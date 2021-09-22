@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #C3CCCC;
+    /*background: #C3CCCC;*/
+    background: #fdfcfa;
 }
 
 body * {
@@ -19,9 +20,30 @@ header {
 header h1 {
     font-family: 'Parisienne', cursive;
     font-style: italic;
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: bold;
     color: #0D1616;
+}
+
+#settings {
+    display: flex;
+    justify-content: right;
+}
+
+#settings ul{
+    display: none
+}
+
+#settings ul li{
+    margin: 0 10px;
+}
+
+#settings .settings-icon:hover{
+    color: #698E8E;
+    cursor: pointer;;
+}
+#settings .settings-icon{
+    margin-left: 20px;
 }
 
 main button > i.fas {
@@ -74,4 +96,24 @@ section {
 
 span.temp {
     background-color: lightgrey;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-family: 'Parisienne', cursive;
+        font-style: italic;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0D1616;
+    }
+    .reset-text {
+        display: none;
+    }
+    main button > i.fas {
+        margin-right: 0;
+    }
+    #settings ul{
+        display: none;
+        flex-wrap: wrap;
+    }
 }
