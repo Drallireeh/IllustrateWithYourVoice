@@ -48,13 +48,6 @@ recognition.onresult = function (event) {
             console.log(filterPhrase(string));
             qresult = filterPhrase(string);
 
-
-            axios.get('http://127.0.0.1:8000/api/test?q=' + qresult.join(' '))
-              .then((response) => {
-                console.log(response);
-              }, (error) => {
-                console.log(error);
-              });
             string = "";
             $(".temp").html(final + " ").removeClass("temp");
         } else {
