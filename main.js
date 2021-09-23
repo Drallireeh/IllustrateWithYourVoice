@@ -2,12 +2,10 @@ $( document ).ready(function() {
    var settingsDiplayed = false
    $('#settings > i').click(function() {
     if (settingsDiplayed == true){
-        $('#settings > ul').hide()
+        $('#settings > ul').css("visibility", "hidden");
         settingsDiplayed = false;
     } else {
-        $('#settings > ul').css("display", "inline-flex");
+        $('#settings > ul').css("visibility", "initial");
         settingsDiplayed = true;
     }
-    
-    
 })});

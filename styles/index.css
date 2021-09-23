@@ -31,7 +31,8 @@ header h1 {
 }
 
 #settings ul{
-    display: none
+    display: inline-flex;
+    visibility: hidden;
 }
 
 #settings ul li{
