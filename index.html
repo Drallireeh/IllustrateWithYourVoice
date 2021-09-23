@@ -29,6 +29,7 @@
     <script defer src="request.js"></script>
     <script defer src="speech.js"></script>
     <script src="main.js"></script>
+    <script src="front.js"></script>
 
 </head>
 
@@ -36,13 +37,16 @@
     <main>
         <header>
             <h1>Illustrate With Your Voice</h1>
-            <button><i class="fas fa-undo"></i> <span class="reset-text"> Raconter une autre histoire</span></button>
+            <div class="buttons-container">
+                <button id="button-start" onclick="toggleStartStop()"><i class="fas fa-book-reader"></i> Commencer l'histoire</span></button>
+                <button id="reset-content"><i class="fas fa-undo"></i>Raconter une autre histoire</button>
+            </div>
         </header>
         <section id="settings">
             <ul>
                 <li>
                     <div>
-                        <input class="checkbox" type="checkbox" id="display-text" name="" onclick="displayText()" checked>
+                        <input class="checkbox" type="checkbox" id="display-text" name="" checked>
                         <label for="scales">Afficher fenêtre de texte</label>
                     </div>
                 </li>
@@ -53,19 +57,18 @@
                     </div>
                 </li>
                 <li>
-                    <div style="display:none;">
-                        <input class="checkbox" type="checkbox" id="option3" name="">
-                        <label for="scales">Option 3</label>
+                    <div>
+                        <input class="checkbox" type="checkbox" id="enable_music" name="">
+                        <label for="scales">Fond musical</label>
                     </div>
                 </li>
             </ul>
             <i class="settings-icon fas fa-cog"></i>
         </section>
 
-        <section class="start">
-            <button id="button-start" onclick="toggleStartStop()"><i class="fas fa-book-reader"></i> Commencer
-                l'histoire</span></button>
-        </section>
+        <!--<section class="start">
+            
+        </section>-->
 
         <section>
             <div contenteditable="true" name="textarea" id="textarea"></div>
@@ -74,13 +77,9 @@
     </main>
     <script type="module" src="main.js"></script>
     <script>
-        function displayText(){
-        if ($('#display-text').is(':checked')) {
-            $('#textarea').show();
-        } else {
-            $('#textarea').hide();
-        }
-    }
+        $('#reset-content').click(function(){
+        $('.story-ctn').empty();
+    })
     </script>
 </body>
 </html>
