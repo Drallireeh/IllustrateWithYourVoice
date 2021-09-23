@@ -20,9 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="libs/bundle.js" type="module"></script>
+    <script defer src="libs/wordFilterBundle.js" type="module"></script>
+    <!-- <script defer src="libs/requestBundle.js" type="module"></script> -->
+    <!-- <script defer src="libs/serpsearch.js"></script> -->
+    <script defer src="request.js"></script>
     <script defer src="speech.js"></script>
     <script src="main.js"></script>
 
@@ -66,10 +70,9 @@
         <section>
             <div contenteditable="true" name="textarea" id="textarea"></div>
         </section>
-        
-        <section>
-        </section>
+        <section class="story-ctn"></section>
     </main>
+    <script type="module" src="main.js"></script>
     <script>
         function displayText(){
         if ($('#display-text').is(':checked')) {
@@ -80,5 +83,4 @@
     }
     </script>
 </body>
-
 </html>

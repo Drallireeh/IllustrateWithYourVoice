@@ -45,16 +45,13 @@ recognition.onresult = function (event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final = event.results[i][0].transcript;
-            console.log(filterPhrase(string));
             qresult = filterPhrase(string);
 
+            
+            for (let i = 0; i < qresult.length; i++) {
+                searchGoogle(qresult[i]);
+            }
 
-            axios.get('http://127.0.0.1:8000/api/test?q=' + qresult.join(' '))
-              .then((response) => {
-                console.log(response);
-              }, (error) => {
-                console.log(error);
-              });
             string = "";
             $(".temp").html(final + " ").removeClass("temp");
         } else {
