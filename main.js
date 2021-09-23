@@ -14,6 +14,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Get firestore database
 const db = getFirestore();
 
 const querySnapshot = await getDocs(collection(db, "images"));
