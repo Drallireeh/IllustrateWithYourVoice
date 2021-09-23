@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background: #060606;
 }
 
 body * {
@@ -11,15 +12,46 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid lightgrey;
-    border-radius: 10px;
+    border-bottom: 1px solid #d4af37;
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Parisienne', cursive;
     font-style: italic;
-    font-size: 2rem;
+    font-size: 2.7rem;
     font-weight: bold;
+    color: #d4af37;
+}
+header .buttons-container {
+    display: flex;
+}
+header button{
+   margin-left: 10px;
+}
+#settings {
+    display: flex;
+    justify-content: right;
+}
+
+#settings ul{
+    display: inline-flex;
+    visibility: hidden;
+}
+
+#settings ul li{
+    margin: 0 10px;
+    color: #d4af37;
+}
+#settings .settings-icon{
+    color: #d4af37;
+}
+
+#settings .settings-icon:hover{
+    color: #aaa9ad;
+    cursor: pointer;
+}
+#settings .settings-icon{
+    margin-left: 20px;
 }
 
 main .story-ctn-temp {
@@ -28,7 +60,7 @@ main .story-ctn-temp {
 
 main button > i.fas {
     background-color: white;
-    color: darkslategray;
+    color: #d4af37;
     border-radius: 50%;
     height: 30px;
     width: 30px;
@@ -41,7 +73,7 @@ main button > i.fas {
 
 main button {
     color: white;
-    background-color: darkslategray;
+    background-color: #d4af37;
     border-radius: 20px;
     font-size: 1rem;
     padding: 10px;
@@ -53,7 +85,11 @@ main button {
 }
 
 main button.active {
-    background-color: red;
+    background-color: #aaa9ad;
+    animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 section {
@@ -75,14 +111,57 @@ section img {
 }
 
 #textarea {
-    width: 100%;
     min-height: 100px;
-    border: 1px solid black;
+    border: 1px solid #d4af37;
     margin-top: 10px;
+    width: 100%;
     border-radius: 20px;
+    color: #d4af37;
     padding: 10px;
 }
 
 span.temp {
     background-color: lightgrey;
+}
+
+@media screen and (max-width: 768px) {
+    header  {
+        display: block;
+    }
+    header h1 {
+        font-family: 'Parisienne', cursive;
+        font-style: italic;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #d4af37;
+        text-align: center;
+    }
+    header .buttons-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    header button {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-flex;
+    }
+    .reset-text {
+        display: none;
+    }
+    #settings ul{
+        display: none;
+        flex-wrap: wrap;
+    }
+}
+@keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 5px 0px rgba(212,175,55,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 5px 13px rgba(212,175,55,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(212,175,55,0);
+	}
 }
