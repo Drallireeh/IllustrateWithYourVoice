@@ -3,6 +3,10 @@ let string = "";
 let timeBreak = 600;
 let timeoutVar = null;
 
+import getDbImages from './main.js'
+
+$("#button-start").on("click", toggleStartStop);
+
 if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
     alert("La web speech api n'est pas compatible sur ce navigateur");
 } else {
@@ -45,12 +49,17 @@ recognition.onresult = function (event) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final = event.results[i][0].transcript;
-            qresult = filterPhrase(string);
+            let qresult = filterPhrase(string);
 
             connectAppendElements(qresult.length);
-
+            
             for (let i = 0; i < qresult.length; i++) {
-                searchGoogle(qresult[i], i);
+                getDbImages().then(response => {
+                    const isSameName = (element) => element.name.toLowerCase() === qresult[i];
+                    let indexName = response.findIndex(isSameName)
+                    if (indexName !== -1) $(".story-ctn").append(`<img src="${response[indexName].url}"/>`);
+                    else searchGoogle(qresult[i], i); 
+                });
             }
 
             string = "";
@@ -70,7 +79,7 @@ recognition.onresult = function (event) {
     
 };
 
-function toggleStartStop() {
+export default function toggleStartStop() {
     if (recognizing) {
         recognition.stop();
     } else {

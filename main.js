@@ -17,8 +17,14 @@ const app = initializeApp(firebaseConfig);
 // Get firestore database
 const db = getFirestore();
 
-const querySnapshot = await getDocs(collection(db, "images"));
-querySnapshot.forEach((doc) => {
-    const { name, url } = doc.data();
-    console.log(name, url)
-});
+export default async function getDbImages() {
+    let array = [];
+    const querySnapshot = await getDocs(collection(db, "images"));
+    console.log(querySnapshot)
+    querySnapshot.forEach((doc) => {
+        const { name, url } = doc.data();
+        array.push({name: name, url: url})
+    });
+
+    return array;
+}
