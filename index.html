@@ -41,22 +41,25 @@
             <ul>
                 <li>
                     <div>
-                        <input class="checkbox" type="checkbox" id="display-text" name="" checked>
-                        <label for="scales">Afficher fenêtre de texte</label>
+                        <input class="checkbox" type="checkbox" id="display-text" name="display-text" checked>
+                        <label for="display-text">Afficher fenêtre de texte</label>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <input class="checkbox" type="checkbox" id="cartoon_mode" name="">
-                        <label for="scales">Filtre dessin animé</label>
+                        <input class="checkbox" type="checkbox" id="enable_music" value="enable_music" name="enable_music">
+                        <label for="enable_music">Fond musical</label>
                     </div>
                 </li>
-                <li>
-                    <div>
-                        <input class="checkbox" type="checkbox" id="enable_music" name="">
-                        <label for="scales">Fond musical</label>
-                    </div>
-                </li>
+                <select name="filters" id="filter-select">
+                    <option value="">Sélectionnez un filtre</option>
+                    <option value="manga">Manga</option>
+                    <option value="cartoon">Dessin animé</option>
+                    <option value="paint">Peinture</option>
+                    <option value="logo">logo</option>
+                    <option value="tatoo">Tatouages</option>
+                    <option value="wallpaper">Fond d'écrans</option>
+                </select>
             </ul>
             <i class="settings-icon fas fa-cog"></i>
         </section>

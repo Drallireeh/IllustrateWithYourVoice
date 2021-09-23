@@ -1,5 +1,6 @@
 let recognizing;
 let string = "";
+let $options = $("#filter-select")
 
 import { getDbImages } from './main.js'
 import searchGoogle from './request.js'
@@ -54,13 +55,14 @@ recognition.onresult = function (event) {
             for (let i = 0; i < qresult.length; i++) {
                 // check if we need to make a request to google or if we can work with our database
                 getDbImages().then(response => {
-                    const isSameName = (element) => element.name.toLowerCase().trim() === qresult[i];
+                    const isSameName = (element) => element.name.toLowerCase().trim() === (qresult[i] + " " + $options.val()).trim();
                     let indexName = response.findIndex(isSameName)
 
+                    console.log((qresult[i] + " " + $options.val()).trim())
                     console.log(response, qresult[i])
 
                     if (indexName !== -1) addWithDatabase(response[indexName].url, i);
-                    else searchGoogle(qresult[i], i);
+                    else searchGoogle((qresult[i] + " " + $options.val()).trim(), i);
                 });
             }
 
