@@ -46,52 +46,47 @@
             <ul>
                 <li>
                     <div>
-                        <input class="checkbox" type="checkbox" id="display-text" name="" checked>
-                        <label for="scales">Afficher fenêtre de texte</label>
+                        <input class="checkbox" type="checkbox" id="display_text" name="" checked>
+                        <label for="display_text">Afficher fenêtre de texte</label>
                     </div>
                 </li>
                 <li>
                     <div>
                         <input class="checkbox" type="checkbox" id="cartoon_mode" name="">
-                        <label for="scales">Filtre dessin animé</label>
+                        <label for="cartoon_mode">Filtre dessin animé</label>
                     </div>
                 </li>
                 <li>
                     <div>
                         <input class="checkbox" type="checkbox" id="enable_music" name="">
-                        <label for="scales">Fond musical</label>
+                        <label for="enable_music">Fond musical</label>
                     </div>
                 </li>
             </ul>
             <i class="settings-icon fas fa-cog"></i>
         </section>
 
-        <!--<section class="start">
-            
-        </section>-->
-
+        <!--
         <section>
             <div contenteditable="true" name="textarea" id="textarea"></div>
         </section>
-        <section class="stage story-ctn"></section>
-            <div class="container">
-              <div class="ring">
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
+        -->
+        <section class="stage story-ctn">
+            <div id="drag-container">
+                <div id="spin-container">
+                  <!-- Add your images (or video) here -->
+                  <img src="https://images.pexels.com/photos/206395/pexels-photo-206395.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                  
+                  <p id="caption">Illustrate With Your Voice</p>
+                </div>
+                <div id="ground"></div>
               </div>
-            </div>
+              
+        </section>
+        <div contenteditable="true" name="textarea" id="textarea"></div>
     </main>
     <script type="module" src="main.js"></script>
     <script>
-       
-    </script>
+</script>
 </body>
 </html>
