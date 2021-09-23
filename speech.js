@@ -50,7 +50,7 @@ recognition.onresult = function (event) {
             let qresult = filterPhrase(string);
 
             connectAppendElements(qresult.length);
-            
+
             for (let i = 0; i < qresult.length; i++) {
                 // check if we need to make a request to google or if we can work with our database
                 getDbImages().then(response => {
@@ -58,9 +58,9 @@ recognition.onresult = function (event) {
                     let indexName = response.findIndex(isSameName)
 
                     console.log(response, qresult[i])
-                    
-                    if (indexName !== -1) $(".story-ctn").append(`<img src="${response[indexName].url}"/>`);
-                    else searchGoogle(qresult[i], i); 
+
+                    if (indexName !== -1) addWithDatabase(response[indexName].url, i);
+                    else searchGoogle(qresult[i], i);
                 });
             }
 
@@ -75,7 +75,7 @@ recognition.onresult = function (event) {
 
     if (!$("#textarea .temp").length) $("#textarea").append(`<p class="temp">${interim}</p>`);
     else $("#textarea .temp").html(interim);
-    
+
 };
 
 // Launch or stop detection
@@ -93,16 +93,22 @@ export default function toggleStartStop() {
  */
 function connectAppendElements(lengthCount) {
     $(".story-ctn-temp").on('DOMNodeInserted DOMNodeRemoved', function () {
-		if ($(".story-ctn-temp").children().length === lengthCount) {
-			for (let i = 0; i < lengthCount; i++) {
+        if ($(".story-ctn-temp").children().length === lengthCount) {
+            let initialLength = $(".story-ctn").children().length;
+            for (let i = 0; i < lengthCount; i++) {
                 // Get data-index value from loop and clone element into display section
-                $(".story-ctn").append($(".story-ctn-temp").children(`img[data-index='${i + 1}']`).clone())
-			}
+                $(".story-ctn").append($(".story-ctn-temp").children(`img[data-index='${initialLength + i + 1}']`).clone())
+            }
 
             // Unbind event and clean temp section content
-			$(".story-ctn-temp").unbind('DOMNodeInserted DOMNodeRemoved');
+            $(".story-ctn-temp").unbind('DOMNodeInserted DOMNodeRemoved');
             $(".story-ctn-temp").html("");
             return;
-		}
-	});
+        }
+    });
+}
+
+// When there is a hit in our database, use it to return image
+function addWithDatabase(url, index) {
+    $(".story-ctn-temp").append(`<img src="${url}" data-index="${$(".story-ctn").children().length + 1 + index}"/>`);
 }
