@@ -58,9 +58,6 @@ recognition.onresult = function (event) {
                     const isSameName = (element) => element.name.toLowerCase().trim() === (qresult[i] + " " + $options.val()).trim();
                     let indexName = response.findIndex(isSameName)
 
-                    console.log((qresult[i] + " " + $options.val()).trim())
-                    console.log(response, qresult[i])
-
                     if (indexName !== -1) addWithDatabase(response[indexName].url, i);
                     else searchGoogle((qresult[i] + " " + $options.val()).trim(), i);
                 });
