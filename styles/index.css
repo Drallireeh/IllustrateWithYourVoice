@@ -22,6 +22,10 @@ header h1 {
     font-weight: bold;
 }
 
+main .story-ctn-temp {
+    display: none;
+}
+
 main button > i.fas {
     background-color: white;
     color: darkslategray;

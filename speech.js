@@ -47,9 +47,10 @@ recognition.onresult = function (event) {
             final = event.results[i][0].transcript;
             qresult = filterPhrase(string);
 
-            
+            connectAppendElements(qresult.length);
+
             for (let i = 0; i < qresult.length; i++) {
-                searchGoogle(qresult[i]);
+                searchGoogle(qresult[i], i);
             }
 
             string = "";
@@ -82,4 +83,17 @@ function phraseEndDetection() {
     timeoutVar = setTimeout(function() {
         console.log("requête");
     }, timeBreak);
+}
+
+function connectAppendElements(lengthCount) {
+    $(".story-ctn-temp").on('DOMNodeInserted DOMNodeRemoved', function () {
+		if ($(".story-ctn-temp").children().length === lengthCount) {
+			for (let i = 0; i < lengthCount; i++) {
+                $(".story-ctn").append($(".story-ctn-temp").children(`img[data-index='${i + 1}']`).clone())
+			}
+			$(".story-ctn-temp").unbind('DOMNodeInserted DOMNodeRemoved');
+            $(".story-ctn-temp").html("");
+            return;
+		}
+	});
 }
