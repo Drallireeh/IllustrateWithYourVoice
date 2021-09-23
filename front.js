@@ -8,6 +8,7 @@ $( document ).ready(function() {
          $('#settings > ul').css("visibility", "initial");
          settingsDiplayed = true;
     }
+    });
     $('#display-text').click(function(){
         if ($('#display-text').is(':checked')) {
             $('#textarea').show();
@@ -15,4 +16,7 @@ $( document ).ready(function() {
             $('#textarea').hide();
         }
     })
-})});
+    $('#reset-content').click(function(){
+        $('.story-ctn').empty();
+    })
+});
