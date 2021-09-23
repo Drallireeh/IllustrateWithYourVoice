@@ -8,4 +8,6 @@ $( document ).ready(function() {
         $('#settings > ul').css("display", "inline-flex");
         settingsDiplayed = true;
     }
+    
+    
 })});
