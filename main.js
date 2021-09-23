@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-import { getFirestore, getDoc, getDocs, doc, collection } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const db = getFirestore();
 export default async function getDbImages() {
     let array = [];
     const querySnapshot = await getDocs(collection(db, "images"));
-    console.log(querySnapshot)
+    // Get all documents inside collection 'images' and get their name and url path
     querySnapshot.forEach((doc) => {
         const { name, url } = doc.data();
         array.push({name: name, url: url})
