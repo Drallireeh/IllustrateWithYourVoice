@@ -39,7 +39,6 @@ main button > i.fas {
     font-size: 1rem;
 }
 
-
 main button {
     color: white;
     background-color: darkslategray;
@@ -59,6 +58,14 @@ main button.active {
 
 section {
     padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section img {
+    padding: 5px;
+    border-radius: 150px;
 }
 
 .start {
@@ -72,6 +79,8 @@ section {
     min-height: 100px;
     border: 1px solid black;
     margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 span.temp {

@@ -17,6 +17,10 @@ const app = initializeApp(firebaseConfig);
 // Get firestore database
 const db = getFirestore();
 
+/**
+ * We get all our database image and check if what we search is already inside to avoid api call
+ * @returns Array which contains an object with pair name/url from our database
+ */
 async function getDbImages() {
     let array = [];
     const querySnapshot = await getDocs(collection(db, "images"));
@@ -29,6 +33,11 @@ async function getDbImages() {
     return array;
 }
 
+/**
+ * Add image to our database
+ * @param {string} name image name (search type + options)
+ * @param {string} url image url 
+ */
 async function addDbImage(name, url) {
     await addDoc(collection(db, "images"), {
         name: name,
