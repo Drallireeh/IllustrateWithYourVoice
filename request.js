@@ -11,5 +11,9 @@ export default function searchGoogle(keyword, index, options = "") {
 	axios.get('https://adcoin.fr/api/query/' + keyword + ' ' + options).then(response => {
 		$(".story-ctn-temp").append(`<img src="${response.data.images_results[0].thumbnail}" data-index="${$(".story-ctn").children().length + 1 + index}"/>`);
 		addDbImage(keyword + ' ' + options, response.data.images_results[0].thumbnail);
+	}).catch(error => {
+		if (error.message === "Cannot read properties of undefined (reading '0')") $(".story-ctn-temp").append(`<img src="assets/favicon.ico" data-index="${$(".story-ctn").children().length + 1 + index}"/>`);
+		else alert(error);
+		console.log(error);
 	});
 }

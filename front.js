@@ -23,4 +23,9 @@ $(document).ready(function () {
         $('.story-ctn').empty();
         $("#textarea").empty();
     });
+
+    // Hide modal
+    $("#modal-home").on("click", ".close", function() {
+        $("#modal-home").hide();
+    })
 });

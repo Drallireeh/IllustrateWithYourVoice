@@ -7,6 +7,7 @@
     <title>Illustrate with your voice</title>
 
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +30,19 @@
 
 <body>
     <main>
+        <div id="modal-home" class="modal">
+            <div class="modal-content">
+                <div class="actions">
+                    <span class="close">&times;</span>
+                </div>
+                <div>
+                    <h2>Bienvenue sur Illustrate With Your Voice</h2>
+                    <p>Si vous voyez cette image apparaître lors de vos recherches, c'est qu'on a épuisé les requêtes
+                        possibles avec notre apikey. Désolé de la gêne occasionnée</p>
+                    <img src="Assets/favicon.ico" alt="Image indiquant qu'on ne dispose pas d'une api key valide">
+                </div>
+            </div>
+        </div>
         <header>
             <h1>Illustrate With Your Voice</h1>
             <div class="buttons-container">
