@@ -118,6 +118,8 @@ section img {
     border-radius: 20px;
     color: #d4af37;
     padding: 10px;
+    cursor: default;
+    font-size: 20px;
 }
 
 span.temp {
