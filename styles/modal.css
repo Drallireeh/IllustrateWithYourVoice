@@ -68,7 +68,7 @@
 }
 
 .modal .close {
-    color: #aaa;
+    color: #d4af37;
     float: right;
     font-size: 2.1875rem;
     font-weight: bold;
@@ -76,7 +76,7 @@
   
 .modal .close:hover,
 .modal .close:focus {
-    color: black;
+    color: beige;
     text-decoration: none;
     cursor: pointer;
 }
