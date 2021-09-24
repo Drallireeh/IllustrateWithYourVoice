@@ -10,6 +10,10 @@ Elle fonctionne à l'aide d'une api qui fais des recherche sur google image, on 
 
 Voici le lien : https://illustratewithyourvoice.web.app/
 
+## IMPORTANT
+
+Ce projet ne fonctionnera qu'avec Google Chrome en raison de la non portabilité de l'api concernant le micro.
+
 ### Pour lancer le projet en local :
 
 `npm install` pour installer toutes les dépendances nécessaires
