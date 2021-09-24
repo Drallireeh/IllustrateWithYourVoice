@@ -27,7 +27,7 @@ async function getDbImages() {
     // Get all documents inside collection 'images' and get their name and url path
     querySnapshot.forEach((doc) => {
         const { name, url } = doc.data();
-        array.push({ name: name, url: url })
+        array.push({ name: name, url: url });
     });
 
     return array;

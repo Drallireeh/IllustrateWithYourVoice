@@ -1,4 +1,4 @@
-import {addDbImage} from './main.js'
+import { addDbImage } from './main.js';
 
 /**
  * Make a request with serp api to search images on google

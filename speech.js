@@ -1,13 +1,14 @@
 let recognizing;
 let string = "";
-let $options = $("#filter-select")
+let $options = $("#filter-select");
 
-import { getDbImages } from './main.js'
-import searchGoogle from './request.js'
+import { getDbImages } from './main.js';
+import searchGoogle from './request.js';
 
 // Connect start/stop button
 $("#button-start").on("click", toggleStartStop);
 
+// Check if web speech is available on your browser
 if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
     alert("La web speech api n'est pas compatible sur ce navigateur");
 } else {
@@ -38,7 +39,7 @@ recognition.onresult = function (event) {
     let final = "";
     let interim = "";
     if (typeof (event.results) === 'undefined') {
-        console.error("STOP")
+        console.error("STOP");
         recognition.stop();
         return;
     }
@@ -56,7 +57,7 @@ recognition.onresult = function (event) {
                 // check if we need to make a request to google or if we can work with our database
                 getDbImages().then(response => {
                     const isSameName = (element) => element.name.toLowerCase().trim() === (qresult[i] + " " + $options.val()).trim();
-                    let indexName = response.findIndex(isSameName)
+                    let indexName = response.findIndex(isSameName);
 
                     if (indexName !== -1) addWithDatabase(response[indexName].url, i);
                     else searchGoogle((qresult[i] + " " + $options.val()).trim(), i);
@@ -96,7 +97,7 @@ function connectAppendElements(lengthCount) {
             let initialLength = $(".story-ctn").children().length;
             for (let i = 0; i < lengthCount; i++) {
                 // Get data-index value from loop and clone element into display section
-                $(".story-ctn").append($(".story-ctn-temp").children(`img[data-index='${initialLength + i + 1}']`).clone())
+                $(".story-ctn").append($(".story-ctn-temp").children(`img[data-index='${initialLength + i + 1}']`).clone());
             }
 
             // Unbind event and clean temp section content
